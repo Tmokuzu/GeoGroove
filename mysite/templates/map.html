@@ -1,87 +1,63 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
- <head>
- <meta charset="utf-8">
- <title>曲リスト</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- </head>
- <style>
+  <head>
+    <meta charset="utf-8" />
+    <title>曲リスト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
     #regions_div {
-        display: block;
-        height: auto;
-        margin: 0 auto;
+      display: block;
+      height: auto;
+      margin: 0 auto;
     }
- </style>
-<body>
+  </style>
+  <body>
     <div class="container">
-        <img src="IMG_2662.jpg" alt="logo" width="110px" height="110px">
-        <header>
-            <h1>GeoGroove</h1>
-        </header>
+      <img src="{% static 'images/IMG_2662.jpg' %}" alt="logo" width="110px" height="110px" />
+      <header>
+        <h1>GeoGroove</h1>
+      </header>
     </div>
     <h3>Select area!</h3>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script>
-    google.charts.load('current', {
-        'packages':[
-            'geochart'
-        ],
-        'mapsApiKey': 'AIzaSyBoWB1e1X7P4aSLXB8spnLZqkaDPNdfBzk'
-    });
+    <div id="regions_div" style="width: 900px; height: 500px"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load("current", {
+        packages: ["geochart"],
+        mapsApiKey: "AIzaSyBoWB1e1X7P4aSLXB8spnLZqkaDPNdfBzk",
+      });
 
-    google.charts.setOnLoadCallback(drawRegionsMap);
+      google.charts.setOnLoadCallback(drawRegionsMap);
 
-    // 国がクリックされたら、国名コードをGETパラメータにして記事一覧ページへ送る
-    function selectHandler(reg) {
-        window.location.href = 'list.html';
-    }
+      // 国がクリックされたら、国名コードをGETパラメータにして記事一覧ページへ送る
+      function selectHandler(reg) {
+        window.location.href = "list.html";
+      }
 
-    function drawRegionsMap() {
+      function drawRegionsMap() {
         // 国名コードと国の表示名の配列をここで読み込んでください。
         const codes = [
-            [
-                "Country",
-                "Name"
-            ],
-            [
-                "US",
-                "アメリカ合衆国"
-            ],
-            [
-                "GB",
-                "イギリス"
-            ],
-            [
-                "ES",
-                "スペイン"
-            ],
-            [
-                "VN",
-                "ベトナム"
-            ],
-            [
-                "JP",
-                "日本"
-            ],
-            [
-                "RU",
-                "ロシア"
-            ],
-            [
-                "BR",
-                "ブラジル"
-            ],
+          ["Country", "Name"],
+          ["US", "アメリカ合衆国"],
+          ["GB", "イギリス"],
+          ["ES", "スペイン"],
+          ["VN", "ベトナム"],
+          ["JP", "日本"],
+          ["RU", "ロシア"],
+          ["BR", "ブラジル"],
         ];
         const data = google.visualization.arrayToDataTable(codes);
         const options = {
-            defaultColor:'#008080',
+          defaultColor: "#008080",
         };
-        const chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        const chart = new google.visualization.GeoChart(document.getElementById("regions_div"));
 
-        google.visualization.events.addListener(chart, 'regionClick', selectHandler);
+        google.visualization.events.addListener(chart, "regionClick", selectHandler);
         chart.draw(data, options);
-    }
-</script>
- </body>
+      }
+    </script>
+  </body>
 </html>
