@@ -4,10 +4,10 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 class Index(TemplateView):
-    template_name = "test.html"
+    template_name = "index.html"
 
-#class Index(TemplateView):
-#    template_name = "map.html"
+class List(TemplateView):
+    template_name = "list.html"
 
 #class Index(TemplateView):
 #    template_name = "playlist.html"
