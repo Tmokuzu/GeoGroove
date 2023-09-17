@@ -1,0 +1,30 @@
+header {
+    background-color: #f2f1ec;
+}
+
+header img {
+    width: auto;
+    height: 100px;
+}
+
+main {
+    width: auto;
+    height: 400px;
+    background-color: seagreen;
+}
+
+h2 {
+    padding: 10px;
+    color: white
+}
+
+.area-list li {
+    list-style: none;
+} 
+
+button {
+    display: block;
+    width: 300px;
+    padding: 16px;
+}
+
