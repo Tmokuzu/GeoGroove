@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  margin: none;
+  background-color: teal;
+  display: flex;
+  align-items: center;
+}
+h1 {
+  color: white;
+  text-align: center;
+  display: flex;
+  font-size: 36px;
+  background-color: teal;
+  padding: 5px;
+}
+h2 {
+  padding: 20px;
+  margin-left: 25%;
+  width: fit-content;
+  border-bottom: dotted;
+  border-width: 5px;
+}
+body {
+  background-color: #cde6c7;
+}
+.title {
+  font-size: 20px;
+  text-align: center;
+}
+.name {
+  font-size: 13px;
+  color: gray;
+  text-align: right;
+}
+.list {
+  width: 700px;
+  margin: auto;
+  padding: 20px;
+  display: center;
+}
+.list ol {
+  padding-left: 0;
+  margin-left: 40px;
+  border-top: 1px solid teal;
+  border-bottom: 1px solid teal;
+}
+.list li {
+  list-style-type: none;
+  padding: 5px 10px;
+  border-top: 1px solid teal;
+  border-bottom: 1px solid teal;
+}
