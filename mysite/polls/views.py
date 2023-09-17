@@ -4,7 +4,7 @@ from .models import Music
 # Create your views here.
 
 class Index(TemplateView):
-    template_name = "index.html"
+    template_name = "map.html"
 
 class List(TemplateView):
     template_name = "list.html"
